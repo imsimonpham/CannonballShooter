@@ -225,6 +225,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1211953410970544577, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97629607
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.21643952
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6556388014055102759, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6850798612263977546, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -269,6 +297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7084915147122733305, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7629224021338722062, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
       propertyPath: m_Name
       value: Cannon
@@ -301,17 +333,7 @@ MonoBehaviour:
   _barrelPivot: {fileID: 730586877}
   _leftWheel: {fileID: 730586879}
   _rightWheel: {fileID: 730586878}
-  _cannonSpawn: {fileID: 1557627014}
-  _rotateSpeed: 80
-  _canRotateUpward: 0
-  _canRotateDownward: 0
-  _canRotateLeft: 0
-  _canRotateRight: 0
-  _initialPos: {x: 0, y: 0, z: 0}
-  _initialForwardVector: {x: 3.5, y: 0, z: -0.00000035762787}
-  _forwardVector: {x: 3.5, y: 0, z: -0.00000035762787}
-  _angle: 0
-  _direction: 0
+  _rotSpeed: 80
 --- !u!4 &730586877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
@@ -525,8 +547,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1557627014 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5469003032655300654, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
-  m_PrefabInstance: {fileID: 730586874}
-  m_PrefabAsset: {fileID: 0}

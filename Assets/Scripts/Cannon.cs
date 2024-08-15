@@ -3,41 +3,37 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Cannon : MonoBehaviour
 {
+    [Header("Cannon Parts")]
     [SerializeField] private Transform _barrelPivot;
     [SerializeField] private Transform _leftWheel;
     [SerializeField] private Transform _rightWheel;
-    [SerializeField] private float _rotateSpeed;
+    
+    [Header("Cannon Stats")]
+    [SerializeField] private float _rotSpeed;
 
-    [SerializeField] private bool _canRotateUpward;
-    [SerializeField] private bool _canRotateDownward;
-    [SerializeField] private bool _canRotateLeft;
-    [SerializeField] private bool _canRotateRight;
+    // Limits
+    private bool _canRotateUpward;
+    private bool _canRotateDownward;
+    private bool _canRotateLeft;
+    private bool _canRotateRight;
     
-    [SerializeField] private Vector3 _initialForwardVector;
-    [SerializeField] private Vector3 _forwardVector;
-    [SerializeField] private float _horizontalAngle;
-    [SerializeField] private float _horizontalDir;
+    // Vectors
+    private Vector3 _initialForwardVector;
+    private Vector3 _forwardVector;
+    private Vector3 _upwardVector;
+    private Vector3 _barrelForwardVector;
     
-    [SerializeField] private Vector3 _barrelForwardVector;
-    [SerializeField] private Vector3 _upwardVector;
-    [SerializeField] private float _verticalAngle;
-    [SerializeField] private float _verticalDir;
+    // Angles
+    private float _horizontalAngle;
+    private float _horizontalDir;
+    private float _verticalAngleUpward;
+    private float _verticalAngleDownward;
     
 
     void Start()
     {
         _initialForwardVector = transform.forward;
-        
-        // Define the angle in degrees
-        float angleDegrees = 135f;
-        float angleRadians = angleDegrees * Mathf.Deg2Rad;
-
-        // Compute the components of the vector
-        float x = Mathf.Cos(angleRadians);
-        float y = Mathf.Sin(angleRadians);
-        
-        // Create the vector
-        _upwardVector = new Vector3(x, y, 0).normalized;
+        _upwardVector = transform.up;
     }
     
     void Update()
@@ -56,25 +52,25 @@ public class Cannon : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.S) && _canRotateDownward)
         {
-            _barrelPivot.Rotate(Vector3.right * _rotateSpeed * Time.deltaTime);
+            _barrelPivot.Rotate(Vector3.right * _rotSpeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.W) && _canRotateUpward)
         {
-            _barrelPivot.Rotate(Vector3.left * _rotateSpeed * Time.deltaTime);    
+            _barrelPivot.Rotate(Vector3.left * _rotSpeed * Time.deltaTime);    
         }
     }
 
     void HorizontalControl()
     {
         if (Input.GetKey(KeyCode.A) && _canRotateLeft) {
-            transform.Rotate(Vector3.down * _rotateSpeed * Time.deltaTime);
-            _leftWheel.Rotate(Vector3.forward * _rotateSpeed * Time.deltaTime);
-            _rightWheel.Rotate(Vector3.back * _rotateSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.down * _rotSpeed * Time.deltaTime);
+            _leftWheel.Rotate(Vector3.forward * _rotSpeed * 1.5f * Time.deltaTime);
+            _rightWheel.Rotate(Vector3.back * _rotSpeed * 1.5f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D) && _canRotateRight) {
-            transform.Rotate(Vector3.up * _rotateSpeed * Time.deltaTime);
-            _leftWheel.Rotate(Vector3.back * _rotateSpeed * 1.5f * Time.deltaTime);
-            _rightWheel.Rotate(Vector3.forward * _rotateSpeed * 1.5f * Time.deltaTime);
+            transform.Rotate(Vector3.up * _rotSpeed * Time.deltaTime);
+            _leftWheel.Rotate(Vector3.back * _rotSpeed * 1.5f * Time.deltaTime);
+            _rightWheel.Rotate(Vector3.forward * _rotSpeed * 1.5f * Time.deltaTime);
         }
     }
 
@@ -82,6 +78,15 @@ public class Cannon : MonoBehaviour
     {
         // Horizontal limits
         CalculateHorizontalAngle();
+        HorizontalLimits();
+        
+        // Vertical limits
+        CalculateVerticalAngle();
+        VerticalLimits();
+    }
+
+    void HorizontalLimits()
+    {
         if (_horizontalAngle >= 60)
         {
             if (_horizontalDir < 0)
@@ -100,26 +105,24 @@ public class Cannon : MonoBehaviour
             _canRotateLeft = true;
             _canRotateRight = true;
         }
-        
-        // Vertical limits
-        CalculateVerticalAngle();
-        if (_verticalAngle >= 45)
+    }
+
+    void VerticalLimits()
+    {
+        if (_verticalAngleUpward >= 90)
         {
-            if (_verticalDir < 0)
-            {
-                _canRotateDownward = false;
-                _canRotateUpward = true;
-            }
-            else if(_verticalDir > 0)
-            {
-                _canRotateUpward = false;
-                _canRotateDownward = true;
-            }
+            _canRotateDownward = false;
+            _canRotateUpward = true;
+        }
+        else if (_verticalAngleDownward >= 90)
+        {
+            _canRotateUpward = false;
+            _canRotateDownward = true;
         }
         else
         {
-            _canRotateDownward = true;
             _canRotateUpward = true;
+            _canRotateDownward = true;
         }
     }
 
@@ -136,19 +139,18 @@ public class Cannon : MonoBehaviour
     void CalculateVerticalAngle()
     {
         _barrelForwardVector = _barrelPivot.forward;
-        _verticalAngle = Vector3.Angle(_barrelForwardVector, _upwardVector);
-        
-        //Calculate direction of the rotation
-        Vector3 crossProduct = Vector3.Cross(_barrelForwardVector, _upwardVector);
-        _verticalDir = Vector3.Dot(transform.right, crossProduct);
+        _verticalAngleUpward = Vector3.Angle(_barrelForwardVector, _upwardVector);
+        _verticalAngleDownward = Vector3.Angle(_barrelForwardVector, _forwardVector);
     }
 
+    #region Debugging
     void OnDrawGizmos()
     {
         DrawForwardVector();
         DrawInitialForwardVector();
         DrawBarrelForwardVector();
         DrawBarrelUpwardVector();
+        DrawCrossProductVector();
     }
 
     void DrawForwardVector()
@@ -170,4 +172,11 @@ public class Cannon : MonoBehaviour
     {
         Debug.DrawLine(_barrelPivot.position, _barrelPivot.position + _upwardVector, Color.blue);
     }
+    
+    void DrawCrossProductVector()
+    {
+        Debug.DrawLine(transform.position, transform.position + Vector3.Cross(_initialForwardVector, _forwardVector), Color.white);
+    }
+    
+    #endregion
 }
