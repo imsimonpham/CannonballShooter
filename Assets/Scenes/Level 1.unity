@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &660321422 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2999834369381592066, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+  m_PrefabInstance: {fileID: 730586874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7084915147122733305, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7629224021338722062, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
       propertyPath: m_Name
@@ -312,6 +317,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7629224021338722062, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
       insertIndex: -1
       addedObject: {fileID: 730586876}
+    - targetCorrespondingSourceObject: {fileID: 7629224021338722062, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 730586881}
   m_SourcePrefab: {fileID: 100100000, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
 --- !u!1 &730586875 stripped
 GameObject:
@@ -333,7 +341,14 @@ MonoBehaviour:
   _barrelPivot: {fileID: 730586877}
   _leftWheel: {fileID: 730586879}
   _rightWheel: {fileID: 730586878}
+  _cannonBallSpawn: {fileID: 1710283693}
   _rotSpeed: 80
+  _force: 100
+  _fireRate: 1
+  _launchParticles: {fileID: 660321422}
+  _audioSource: {fileID: 730586881}
+  _cannonFireSound: {fileID: 8300000, guid: 0a8eb8b33ef85104a8408c5a20f23aa2, type: 3}
+  _cannonBallPrefab: {fileID: -5479817213082707318, guid: be2f262539015d24f9f5b4df9f4d1119, type: 3}
 --- !u!4 &730586877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2518944828405510672, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
@@ -349,6 +364,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5458706973566889027, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
   m_PrefabInstance: {fileID: 730586874}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &730586881
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730586875}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,8 +565,8 @@ GameObject:
   - component: {fileID: 1135978997}
   - component: {fileID: 1135978996}
   m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,3 +658,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1710283693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5469003032655300654, guid: a88ab0ff1913aee44ba95cc5fd2f4c09, type: 3}
+  m_PrefabInstance: {fileID: 730586874}
+  m_PrefabAsset: {fileID: 0}

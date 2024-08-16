@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Cannon.cs" />
+     <Compile Include="Assets\Scripts\CannonBall.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.settings-manager@2.0.1\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.subsystems@1.0.0\package.json" />

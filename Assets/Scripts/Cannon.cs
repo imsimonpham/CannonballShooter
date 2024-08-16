@@ -7,9 +7,23 @@ public class Cannon : MonoBehaviour
     [SerializeField] private Transform _barrelPivot;
     [SerializeField] private Transform _leftWheel;
     [SerializeField] private Transform _rightWheel;
+    [SerializeField] private Transform _cannonBallSpawn;
     
     [Header("Cannon Stats")]
     [SerializeField] private float _rotSpeed;
+    [SerializeField] private float _force;
+    [SerializeField] private float _fireRate;
+    private float _lastTimeFire = 0f;
+    
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem _launchParticles;
+
+    [Header("Audio")] 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _cannonFireSound;
+    
+    [Header("Cannonball")]
+    [SerializeField] private CannonBall _cannonBallPrefab;
 
     // Limits
     private bool _canRotateUpward;
@@ -39,15 +53,18 @@ public class Cannon : MonoBehaviour
     void Update()
     {
         HandleControls();
+        LaunchCannonball();
     }
 
+    #region Controls
+    
     private void HandleControls()
     {
         VerticalControl();
         HorizontalControl();
         LimitCannonAngle();
     }
-
+    
     void VerticalControl()
     {
         if (Input.GetKey(KeyCode.S) && _canRotateDownward)
@@ -142,6 +159,32 @@ public class Cannon : MonoBehaviour
         _verticalAngleUpward = Vector3.Angle(_barrelForwardVector, _upwardVector);
         _verticalAngleDownward = Vector3.Angle(_barrelForwardVector, _forwardVector);
     }
+    
+    #endregion
+    
+    #region Shoot
+    void LaunchCannonball()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time - _lastTimeFire >= 1 / _fireRate)
+        {
+            Fire();
+            PlayLaunchParticles();
+            PlayLaunchSound();
+            _lastTimeFire = Time.time;
+        }
+    }
+
+    void Fire()
+    {
+        var ball = Instantiate(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.rotation);
+        ball.Init(_cannonBallSpawn.forward * _force);
+    }
+
+    void PlayLaunchParticles() {_launchParticles.Play();}
+
+    void PlayLaunchSound() {_audioSource.PlayOneShot(_cannonFireSound);}
+    
+    #endregion
 
     #region Debugging
     void OnDrawGizmos()
