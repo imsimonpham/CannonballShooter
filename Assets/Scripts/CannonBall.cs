@@ -15,7 +15,7 @@ public class CannonBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        /*if (collision.transform.CompareTag("Target"))
+        if (collision.transform.CompareTag("Target"))
         {
             ContactPoint contact = collision.contacts[0];
             _hitPoint = contact.point;
@@ -31,7 +31,7 @@ public class CannonBall : MonoBehaviour
                 }
             }
 
-        }*/
+        }
         
         if (collision.transform.CompareTag("Ground"))
         {
@@ -39,9 +39,9 @@ public class CannonBall : MonoBehaviour
         }
     }
 
-    /*private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(_hitPoint, _explosionRadius);
-    }*/
+    }
 }

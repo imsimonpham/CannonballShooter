@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -25,6 +26,9 @@ public class Cannon : MonoBehaviour
     [Header("Cannonball")]
     [SerializeField] private CannonBall _cannonBallPrefab;
 
+    [Header("Projection")] 
+    [SerializeField] private Projection _projection;
+
     // Limits
     private bool _canRotateUpward;
     private bool _canRotateDownward;
@@ -49,11 +53,22 @@ public class Cannon : MonoBehaviour
         _initialForwardVector = transform.forward;
         _upwardVector = transform.up;
     }
-    
+
+    private void FixedUpdate()
+    {
+        
+    }
+
     void Update()
     {
         HandleControls();
         LaunchCannonball();
+        _projection.SimulateTrajectory(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.forward * _force );
+    }
+
+    void DrawTrajectoryLine()
+    {
+        
     }
 
     #region Controls

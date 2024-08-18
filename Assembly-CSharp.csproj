@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Box.cs" />
+     <Compile Include="Assets\Scripts\Projection.cs" />
      <Compile Include="Assets\Scripts\Cannon.cs" />
      <Compile Include="Assets\Scripts\CannonBall.cs" />
      <Compile Include="Assets\Scripts\Platform.cs" />

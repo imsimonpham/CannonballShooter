@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 2156088222425844109}
-  _explosionRadius: 0.1
-  _explosionForce: 0
-  _upwardModifier: 0
+  _explosionRadius: 0.2
+  _explosionForce: 5
+  _upwardModifier: 1
 --- !u!135 &8993914527579059372
 SphereCollider:
   m_ObjectHideFlags: 0
