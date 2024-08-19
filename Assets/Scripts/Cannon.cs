@@ -56,19 +56,13 @@ public class Cannon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        _projection.SimulateTrajectory(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.forward * _force );
     }
 
     void Update()
     {
         HandleControls();
         LaunchCannonball();
-        _projection.SimulateTrajectory(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.forward * _force );
-    }
-
-    void DrawTrajectoryLine()
-    {
-        
     }
 
     #region Controls
@@ -192,7 +186,7 @@ public class Cannon : MonoBehaviour
     void Fire()
     {
         var ball = Instantiate(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.rotation);
-        ball.Init(_cannonBallSpawn.forward * _force);
+        ball.Init(_cannonBallSpawn.forward * _force, false);
     }
 
     void PlayLaunchParticles() {_launchParticles.Play();}

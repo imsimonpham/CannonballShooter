@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 2210999637320884823}
   m_Layer: 0
   m_Name: Surface
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,7 +657,7 @@ Transform:
   - {fileID: 3004564330376934608}
   - {fileID: 365543225572689759}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7648022918677962991
 GameObject:
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 6489046630359827835}
   m_Layer: 0
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,16 +5,19 @@ public class CannonBall : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _explosionRadius;
     [SerializeField] private float _explosionForce;
-    [SerializeField] float _upwardModifier = 1f;
+    [SerializeField] float _upwardModifier;
     private Vector3 _hitPoint;
+    private bool _isGhost;
 
-    public void Init(Vector3 velocity)
+    public void Init(Vector3 velocity, bool isGhost)
     {
+        _isGhost = isGhost;
         _rb.AddForce(velocity, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (_isGhost) return;
         if (collision.transform.CompareTag("Target"))
         {
             ContactPoint contact = collision.contacts[0];
