@@ -1,15 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Projection : MonoBehaviour
 {
+    [Header("Scene Objects")]
     [SerializeField] private Transform _obstaclesParent;
     private Scene _simulationScene;
     private PhysicsScene _physicsScene;
 
+    [Header("Trajectory Line")]
     [SerializeField] private int _maxPhysicsFrameIterations;
-    [SerializeField] private LineRenderer _line;
+    [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private float _lineWidth;
     
     void Start()
@@ -24,41 +25,59 @@ public class Projection : MonoBehaviour
 
         foreach (Transform obj in _obstaclesParent)
         {
-            var ghostObj = Instantiate(obj.gameObject, obj.position, obj.rotation);
-            if (ghostObj.TryGetComponent<Renderer>(out Renderer renderer))
-                renderer.enabled = false;
-            
-            foreach (Transform obj_1 in ghostObj.transform)
-            {
-                if(obj_1.TryGetComponent<Renderer>(out Renderer renderer_1))
-                    renderer_1.enabled = false;
-                foreach (Transform obj_2 in obj_1.transform)
-                {
-                    if(obj_2.TryGetComponent<Renderer>(out Renderer renderer_2))
-                        renderer_2.enabled = false;
-                }
-            }
-            
-            SceneManager.MoveGameObjectToScene(ghostObj, _simulationScene);
+            GameObject ghostObj = InstantiateAndMoveObjectsToSimulationScene(obj.gameObject, obj.position, obj.rotation);
+            DisableRenderers(ghostObj.transform);
         }
     }
 
     public void SimulateTrajectory(CannonBall cannonballPrefab, Vector3 pos, Vector3 velocity)
     {
-        var ghostObj = Instantiate(cannonballPrefab, pos, Quaternion.identity);
-        SceneManager.MoveGameObjectToScene(ghostObj.gameObject, _simulationScene);
-        
-        ghostObj.Init(velocity, true);
-        _line.positionCount = _maxPhysicsFrameIterations;
-        _line.startWidth = _lineWidth;
+        GameObject ghostObj = InstantiateAndMoveObjectsToSimulationScene(cannonballPrefab.gameObject, pos, Quaternion.identity);
+        ghostObj.GetComponent<CannonBall>().Init(velocity, true);
+        _lineRenderer.positionCount = _maxPhysicsFrameIterations;
+        _lineRenderer.startWidth = _lineWidth;
 
         for (var i = 0; i < _maxPhysicsFrameIterations; i++)
         {
             _physicsScene.Simulate(Time.fixedDeltaTime);
-            _line.SetPosition(i, ghostObj.transform.position);
+            _lineRenderer.SetPosition(i, ghostObj.transform.position);
         }
 
         Destroy(ghostObj.gameObject);
+    }
+    
+    private void DisableRenderers(Transform parentObj)
+    {
+        // disable renderer component in parent object (level 1)
+        if (parentObj.TryGetComponent<Renderer>(out Renderer renderer))
+            renderer.enabled = false;
+        
+        // disable renderer components in child objects (level 2)
+        if (parentObj.childCount > 0)
+        {
+            foreach (Transform childObj_1 in parentObj.transform)
+            {
+                if(childObj_1.TryGetComponent<Renderer>(out Renderer renderer_child_1))
+                    renderer_child_1.enabled = false;
+                
+                // disable renderer components in child objects (level 3)
+                if (childObj_1.childCount > 0)
+                {
+                    foreach (Transform childObj_2 in childObj_1.transform)
+                    {
+                        if(childObj_2.TryGetComponent<Renderer>(out Renderer renderer_child_2))
+                            renderer_child_2.enabled = false;
+                    }
+                }
+            }
+        }
+    }
+
+    private GameObject InstantiateAndMoveObjectsToSimulationScene(GameObject prefab, Vector3 pos, Quaternion rotation)
+    {
+        var obj = Instantiate(prefab, pos, rotation);
+        SceneManager.MoveGameObjectToScene(obj, _simulationScene);
+        return obj;
     }
 }
 
