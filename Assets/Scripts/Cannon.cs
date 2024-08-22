@@ -24,7 +24,7 @@ public class Cannon : MonoBehaviour
     [SerializeField] private AudioClip _cannonFireSound;
     
     [Header("Cannonball")]
-    [SerializeField] private CannonBall _cannonBallPrefab;
+    [SerializeField] private Cannonball _cannonballPrefab;
 
     [Header("Projection")] 
     [SerializeField] private Projection _projection;
@@ -56,7 +56,7 @@ public class Cannon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _projection.SimulateTrajectory(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.forward * _force );
+        _projection.SimulateTrajectoryLine(_cannonballPrefab, _cannonBallSpawn.position, _cannonBallSpawn.forward * _force );
     }
 
     void Update()
@@ -185,7 +185,7 @@ public class Cannon : MonoBehaviour
 
     void Fire()
     {
-        var ball = Instantiate(_cannonBallPrefab, _cannonBallSpawn.position, _cannonBallSpawn.rotation);
+        var ball = Instantiate(_cannonballPrefab, _cannonBallSpawn.position, _cannonBallSpawn.rotation);
         ball.Init(_cannonBallSpawn.forward * _force, false);
     }
 

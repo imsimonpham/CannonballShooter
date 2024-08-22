@@ -30,10 +30,11 @@ public class Projection : MonoBehaviour
         }
     }
 
-    public void SimulateTrajectory(CannonBall cannonballPrefab, Vector3 pos, Vector3 velocity)
+    public void SimulateTrajectoryLine(Cannonball cannonballPrefab, Vector3 pos, Vector3 velocity)
     {
         GameObject ghostObj = InstantiateAndMoveObjectsToSimulationScene(cannonballPrefab.gameObject, pos, Quaternion.identity);
-        ghostObj.GetComponent<CannonBall>().Init(velocity, true);
+        ghostObj.GetComponent<Cannonball>().Init(velocity, true);
+        
         _lineRenderer.positionCount = _maxPhysicsFrameIterations;
         _lineRenderer.startWidth = _lineWidth;
 
@@ -52,6 +53,9 @@ public class Projection : MonoBehaviour
         if (parentObj.TryGetComponent<Renderer>(out Renderer renderer))
             renderer.enabled = false;
         
+        if (parentObj.TryGetComponent<BoxCollider>(out BoxCollider collider) && (parentObj.CompareTag("Target") || parentObj.CompareTag("Bomb")))
+            collider.enabled = false;
+        
         // disable renderer components in child objects (level 2)
         if (parentObj.childCount > 0)
         {
@@ -60,6 +64,9 @@ public class Projection : MonoBehaviour
                 if(childObj_1.TryGetComponent<Renderer>(out Renderer renderer_child_1))
                     renderer_child_1.enabled = false;
                 
+                if (childObj_1.TryGetComponent<BoxCollider>(out BoxCollider collider_child_1) && (childObj_1.CompareTag("Target") || childObj_1.CompareTag("Bomb")))
+                    collider_child_1.enabled = false;
+                
                 // disable renderer components in child objects (level 3)
                 if (childObj_1.childCount > 0)
                 {
@@ -67,6 +74,9 @@ public class Projection : MonoBehaviour
                     {
                         if(childObj_2.TryGetComponent<Renderer>(out Renderer renderer_child_2))
                             renderer_child_2.enabled = false;
+                        
+                        if (childObj_2.TryGetComponent<BoxCollider>(out BoxCollider collider_child_2) && childObj_2.CompareTag("Target"))
+                            collider_child_2.enabled = false;
                     }
                 }
             }

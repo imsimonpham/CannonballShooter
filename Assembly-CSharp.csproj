@@ -45,6 +45,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\Box.cs" />
      <Compile Include="Assets\Scripts\Projection.cs" />
      <Compile Include="Assets\Scripts\Cannon.cs" />
@@ -59,29 +60,47 @@
      <None Include="Library\PackageCache\com.unity.modules.cloth@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.imgui@1.0.0" />
      <None Include="Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Ice" />
      <None Include="Library\PackageCache\com.unity.modules.ai@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.animation@1.0.0" />
      <None Include="Library\PackageCache\com.unity.ugui@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.xr@1.0.0" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Misc" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator" />
+     <Folder Include="Assets\Meshes\Bombs pack\Plastic bomb" />
      <None Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts" />
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.21\Rider" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders" />
      <None Include="Library\PackageCache\com.unity.modules.assetbundle@1.0.0\package.json" />
+     <Folder Include="Assets\Meshes\Bombs pack" />
+     <Folder Include="Assets\Meshes\Bombs pack\Old-timer bomb" />
+     <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
+     <Folder Include="Assets\Animations\Bomb" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\package.json" />
      <Folder Include="Assets\Animations" />
      <None Include="Library\PackageCache\com.unity.modules.imgui@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Graphics" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Fire" />
      <None Include="Library\PackageCache\com.unity.modules.tilemap@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.assetbundle@1.0.0" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Meshes\Bombs pack\Old-timer bomb\Meshes" />
+     <Folder Include="Assets\Meshes\Bombs pack\Old-timer bomb\Materials" />
+     <Folder Include="Assets\Meshes\Bombs pack\Plastic bomb\Meshes" />
      <None Include="Library\PackageCache\com.unity.timeline@1.7.4\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Nature" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Liquids" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18\ValidationConfig.json" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35" />
+     <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Misc" />
      <None Include="Library\PackageCache\com.unity.modules.terrainphysics@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2" />
+     <Folder Include="Assets\Meshes\Bombs pack\Magnetic bomb\Meshes" />
      <Folder Include="Library\PackageCache\com.unity.modules.screencapture@1.0.0" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\package.json" />
      <None Include="Library\PackageCache\com.unity.editorcoroutines@1.0.0\package.json" />
@@ -91,19 +110,24 @@
      <Folder Include="Library\PackageCache\com.unity.modules.cloth@1.0.0" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData.json" />
      <None Include="Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0\package.json" />
+     <Folder Include="Assets\Meshes\Bombs pack\Old-timer bomb\Textures" />
      <Folder Include="Library\PackageCache\com.unity.feature.development@1.0.1" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.imageconversion@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.modules.terrainphysics@1.0.0" />
      <None Include="Library\PackageCache\com.unity.modules.imageconversion@1.0.0\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster" />
      <Folder Include="Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Fire" />
      <None Include="Library\PackageCache\com.unity.feature.development@1.0.1\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.unityanalytics@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.subsystems@1.0.0" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Magic Misc" />
      <None Include="Library\PackageCache\com.unity.ide.rider@3.0.21\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Meshes" />
      <Folder Include="Assets\Models" />
      <None Include="Library\PackageCache\com.unity.modules.video@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.test-framework@1.1.33\package.json" />
@@ -115,16 +139,23 @@
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4" />
      <Folder Include="Library\PackageCache\com.unity.modules.physics2d@1.0.0" />
      <None Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Plain" />
      <None Include="Library\PackageCache\com.unity.modules.particlesystem@1.0.0\package.json" />
+     <Folder Include="Assets\JMO Assets" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Library\PackageCache\com.unity.modules.wind@1.0.0" />
      <None Include="Library\PackageCache\com.unity.modules.physics2d@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.vr@1.0.0\package.json" />
+     <Folder Include="Assets\Meshes\Bombs pack\Plastic bomb\Materials" />
      <Folder Include="Library\PackageCache\com.unity.modules.uielements@1.0.0" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0" />
+     <Folder Include="Assets\Meshes\Bombs pack\Plastic bomb\Textures" />
      <Folder Include="Library\PackageCache\com.unity.modules.particlesystem@1.0.0" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Eerie" />
      <Folder Include="Library\PackageCache\com.unity.settings-manager@2.0.1" />
+     <Folder Include="Assets\Meshes\Bombs pack\Magnetic bomb\Textures" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Light" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18\ValidationExceptions.json" />
      <None Include="Library\PackageCache\com.unity.modules.wind@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ugui@1.0.0\Tests" />
@@ -134,32 +165,41 @@
      <Folder Include="Library\PackageCache\com.unity.editorcoroutines@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.modules.ui@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.modules.androidjni@1.0.0" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Explosions" />
      <Folder Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\Tests" />
      <Folder Include="Assets\Audio" />
+     <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Gizmos" />
      <None Include="Library\PackageCache\com.unity.modules.audio@1.0.0\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Ice" />
+     <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
      <None Include="Library\PackageCache\com.unity.modules.physics@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.4.4" />
      <Folder Include="Assets\Materials\Particles" />
      <None Include="Library\PackageCache\com.unity.modules.vehicles@1.0.0\package.json" />
+     <Folder Include="Assets\Meshes\Bombs pack\Magnetic bomb" />
      <None Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\package.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6" />
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.21" />
      <None Include="Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0\package.json" />
+     <Folder Include="Assets\Meshes\Bombs pack\Magnetic bomb\Materials" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.4.4\ValidationConfig.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Electric" />
      <Folder Include="Library\PackageCache\com.unity.ide.vscode@1.2.5" />
      <Folder Include="Library\PackageCache\com.unity.modules.vehicles@1.0.0" />
      <None Include="Library\PackageCache\com.unity.modules.xr@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Tests" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_Properties.cginc" />
      <Folder Include="Assets\Prefabs" />
+     <Folder Include="Assets\Animations\Trajectory" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
      <Folder Include="Library\PackageCache\com.unity.modules.umbra@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib" />
      <None Include="Library\PackageCache\com.unity.modules.director@1.0.0\package.json" />
+     <Folder Include="Assets\Meshes" />
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.jsonserialize@1.0.0" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationConfig.json" />
@@ -171,13 +211,19 @@
      <None Include="Library\PackageCache\com.unity.modules.terrain@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18" />
      <None Include="Library\PackageCache\com.unity.modules.androidjni@1.0.0\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails" />
      <Folder Include="Assets\Sprites" />
      <Folder Include="Library\PackageCache\com.unity.modules.video@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.modules.ai@1.0.0" />
      <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\PackageConversionData_Assets.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs" />
+     <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Package Resources" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Impacts" />
      <Folder Include="Library\PackageCache\com.unity.modules.terrain@1.0.0" />
      <None Include="Library\PackageCache\com.unity.modules.animation@1.0.0\package.json" />
+     <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Graphics" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib" />
      <None Include="Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.uielements@1.0.0\package.json" />
@@ -840,9 +886,17 @@
       <Project>{22136c59-9196-a25b-dece-697f08101eb9}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{1848dcf1-87bc-1657-dd66-db563d2a955d}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{91269bbf-0a18-64ea-34f7-cbdf9a7820f0}</Project>
       <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{1ded3f81-50d0-442c-636b-d56d4e2774ce}</Project>
+      <Name>CFXRRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Performance.Profile-Analyzer.Editor.csproj">
       <Project>{cf3c1d78-9a30-56c5-5e6e-9ae2b387f6f4}</Project>
@@ -860,6 +914,14 @@
       <Project>{fa38b09b-f15a-9360-213f-eecd5bcf98d3}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="CFXR.WelcomeScreen.csproj">
+      <Project>{03b763a6-5595-ee85-7906-b692e7c49b1f}</Project>
+      <Name>CFXR.WelcomeScreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{86caf582-dad7-2128-47c0-c3e3470a4a5b}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
       <Project>{e48f5d14-390e-7971-2204-b6eb1f2426dc}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
@@ -872,9 +934,17 @@
       <Project>{7ba83ae3-ca48-a812-3e7e-cb1945b264f4}</Project>
       <Name>Unity.VisualScripting.Shared.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{f236ee30-f7a7-9452-7612-7258a4f92032}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{c8d31c1d-11d4-6314-dc7e-f2a6f312ffe3}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{1b9f11ae-ebdd-bb33-0958-0e44f03ce122}</Project>
+      <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{f9775e1f-d450-9f2f-dddd-acd0c1de8baf}</Project>

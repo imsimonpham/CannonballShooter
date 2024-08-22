@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Target
   - Platform
+  - Bomb
   layers:
   - Default
   - TransparentFX
