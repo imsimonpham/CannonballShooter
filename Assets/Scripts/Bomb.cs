@@ -19,14 +19,15 @@ public class Bomb : MonoBehaviour
         if (collision.transform.CompareTag(("Ball")))
         {
             CreateExplosion(collision);
-            if(gameObject.TryGetComponent<Renderer>(out Renderer renderer))
-                renderer.enabled = false;
+            /*if(gameObject.TryGetComponent<Renderer>(out Renderer renderer))
+                renderer.enabled = false;*/
             Destroy(gameObject, 2f);
         }
     }
 
     private void CreateExplosion(Collision collision)
     {
+        // Cast a sphere at hit point and add force
         ContactPoint contact = collision.contacts[0];
         _hitPoint = contact.point;
             
@@ -35,11 +36,10 @@ public class Bomb : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             if (collider.TryGetComponent<Rigidbody>(out Rigidbody rb))
-            {
-                Vector3 dir = collider.transform.position - _hitPoint;
                 rb.AddExplosionForce(_explosionForce, _hitPoint, _explosionRadius, _upwardModifier, ForceMode.Impulse);
-            }
         }
+
+        // Add SFX and VFX
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
         _audioSource.PlayOneShot(_explosionSound);
     }

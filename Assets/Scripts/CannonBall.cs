@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Cannonball : MonoBehaviour
 {
+    [Header("Small Push")] 
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _explosionRadius;
     [SerializeField] private float _explosionForce;
     [SerializeField] float _upwardModifier;
-    private Vector3 _hitPoint;
     
+    private Vector3 _hitPoint;
     private bool _isGhost;
     
     [Header("Audio")] 
@@ -29,8 +30,6 @@ public class Cannonball : MonoBehaviour
             _audioSource.PlayOneShot(_impactSound);
             CreateSmallPush(collision);
         }
-        
-        CreateSmallPush(collision);
         
         if (collision.transform.CompareTag("Ground"))
             Destroy(gameObject, 0.5f);

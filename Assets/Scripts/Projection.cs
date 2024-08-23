@@ -49,11 +49,12 @@ public class Projection : MonoBehaviour
     
     private void DisableRenderers(Transform parentObj)
     {
-        // disable renderer component in parent object (level 1)
+        // disable renderer component in parent object(level 1)
         if (parentObj.TryGetComponent<Renderer>(out Renderer renderer))
             renderer.enabled = false;
         
-        if (parentObj.TryGetComponent<BoxCollider>(out BoxCollider collider) && (parentObj.CompareTag("Target") || parentObj.CompareTag("Bomb")))
+        // disable box collider component in objects of the cubes (Target)
+        if (parentObj.TryGetComponent<BoxCollider>(out BoxCollider collider) && (parentObj.CompareTag("Target")))
             collider.enabled = false;
         
         // disable renderer components in child objects (level 2)
@@ -64,6 +65,7 @@ public class Projection : MonoBehaviour
                 if(childObj_1.TryGetComponent<Renderer>(out Renderer renderer_child_1))
                     renderer_child_1.enabled = false;
                 
+                // disable box collider component in objects of the cubes (Target) and bomb. 
                 if (childObj_1.TryGetComponent<BoxCollider>(out BoxCollider collider_child_1) && (childObj_1.CompareTag("Target") || childObj_1.CompareTag("Bomb")))
                     collider_child_1.enabled = false;
                 
@@ -75,6 +77,7 @@ public class Projection : MonoBehaviour
                         if(childObj_2.TryGetComponent<Renderer>(out Renderer renderer_child_2))
                             renderer_child_2.enabled = false;
                         
+                        // disable box collider component in objects of the cubes (Target) 
                         if (childObj_2.TryGetComponent<BoxCollider>(out BoxCollider collider_child_2) && childObj_2.CompareTag("Target"))
                             collider_child_2.enabled = false;
                     }

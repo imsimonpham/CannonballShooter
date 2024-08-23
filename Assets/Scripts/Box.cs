@@ -12,7 +12,6 @@ public class Box : MonoBehaviour
             PlayHitSound();
             Destroy(gameObject, 0.05f);
         }
-           
     }
 
     void PlayHitSound()
