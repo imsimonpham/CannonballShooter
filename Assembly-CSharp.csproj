@@ -51,10 +51,12 @@
      <Compile Include="Assets\Scripts\Cannon.cs" />
      <Compile Include="Assets\Scripts\CannonBall.cs" />
      <Compile Include="Assets\Scripts\Platform.cs" />
+     <Compile Include="Assets\Scripts\Star.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.settings-manager@2.0.1\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.subsystems@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.jsonserialize@1.0.0\package.json" />
+     <Folder Include="Assets\Grenade Sound FX\Different sounds" />
      <Folder Include="Library\PackageCache\com.unity.test-framework@1.1.33" />
      <None Include="Library\PackageCache\com.unity.modules.screencapture@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.cloth@1.0.0\package.json" />
@@ -68,6 +70,7 @@
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Misc" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator" />
      <Folder Include="Assets\Meshes\Bombs pack\Plastic bomb" />
+     <Folder Include="Assets\Low Poly Christmas Pack Free\Scenes" />
      <None Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\package.json" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts" />
      <Folder Include="Library\PackageCache\com.unity.ide.rider@3.0.21\Rider" />
@@ -92,6 +95,8 @@
      <None Include="Library\PackageCache\com.unity.timeline@1.7.4\package.json" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Nature" />
      <Folder Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom" />
+     <Folder Include="Assets\Grenade Sound FX" />
+     <Folder Include="Assets\Grenade Sound FX\Grenade" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Liquids" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0" />
      <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18\ValidationConfig.json" />
@@ -138,6 +143,7 @@
      <Folder Include="Library\PackageCache\com.unity.modules.vr@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4" />
      <Folder Include="Library\PackageCache\com.unity.modules.physics2d@1.0.0" />
+     <Folder Include="Assets\Low Poly Christmas Pack Free\Prefabs" />
      <None Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\package.json" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails\Plain" />
      <None Include="Library\PackageCache\com.unity.modules.particlesystem@1.0.0\package.json" />
@@ -204,12 +210,14 @@
      <Folder Include="Library\PackageCache\com.unity.modules.jsonserialize@1.0.0" />
      <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\ValidationConfig.json" />
      <Folder Include="Library\PackageCache\com.unity.textmeshpro@3.0.6\Editor Resources\Shaders" />
+     <Folder Include="Assets\Low Poly Christmas Pack Free\FBX" />
      <Folder Include="Assets\Materials" />
      <Folder Include="Library\PackageCache\com.unity.modules.director@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.modules.audio@1.0.0" />
      <Folder Include="Library\PackageCache\com.unity.settings-manager@2.0.1\Content" />
      <None Include="Library\PackageCache\com.unity.modules.terrain@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.18" />
+     <Folder Include="Assets\Low Poly Christmas Pack Free\Materials" />
      <None Include="Library\PackageCache\com.unity.modules.androidjni@1.0.0\package.json" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Sword Trails" />
@@ -225,6 +233,7 @@
      <None Include="Library\PackageCache\com.unity.modules.animation@1.0.0\package.json" />
      <Folder Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Graphics" />
      <Folder Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib" />
+     <Folder Include="Assets\Low Poly Christmas Pack Free" />
      <None Include="Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0\package.json" />
      <None Include="Library\PackageCache\com.unity.modules.uielements@1.0.0\package.json" />
      <Folder Include="Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0" />
@@ -890,17 +899,21 @@
       <Project>{1848dcf1-87bc-1657-dd66-db563d2a955d}</Project>
       <Name>ToonyColorsPro.Demo.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
-      <Project>{91269bbf-0a18-64ea-34f7-cbdf9a7820f0}</Project>
-      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="CFXRRuntime.csproj">
       <Project>{1ded3f81-50d0-442c-636b-d56d4e2774ce}</Project>
       <Name>CFXRRuntime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{91269bbf-0a18-64ea-34f7-cbdf9a7820f0}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Performance.Profile-Analyzer.Editor.csproj">
       <Project>{cf3c1d78-9a30-56c5-5e6e-9ae2b387f6f4}</Project>
       <Name>Unity.Performance.Profile-Analyzer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXR.WelcomeScreen.csproj">
+      <Project>{03b763a6-5595-ee85-7906-b692e7c49b1f}</Project>
+      <Name>CFXR.WelcomeScreen</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
       <Project>{63f81e16-4041-3b97-3eb1-a84edd79ae31}</Project>
@@ -914,10 +927,6 @@
       <Project>{fa38b09b-f15a-9360-213f-eecd5bcf98d3}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="CFXR.WelcomeScreen.csproj">
-      <Project>{03b763a6-5595-ee85-7906-b692e7c49b1f}</Project>
-      <Name>CFXR.WelcomeScreen</Name>
-    </ProjectReference>
     <ProjectReference Include="CFXREditor.csproj">
       <Project>{86caf582-dad7-2128-47c0-c3e3470a4a5b}</Project>
       <Name>CFXREditor</Name>
@@ -930,13 +939,13 @@
       <Project>{f3938572-e4bc-853f-b263-9458a8a52bad}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
-      <Project>{7ba83ae3-ca48-a812-3e7e-cb1945b264f4}</Project>
-      <Name>Unity.VisualScripting.Shared.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{f236ee30-f7a7-9452-7612-7258a4f92032}</Project>
       <Name>CFXRDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
+      <Project>{7ba83ae3-ca48-a812-3e7e-cb1945b264f4}</Project>
+      <Name>Unity.VisualScripting.Shared.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{c8d31c1d-11d4-6314-dc7e-f2a6f312ffe3}</Project>
